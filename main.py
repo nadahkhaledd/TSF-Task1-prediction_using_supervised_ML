@@ -10,9 +10,9 @@ dataset = pd.read_csv('data.csv')
 x = dataset['Hours']
 y = dataset['Scores']
 
-plt.scatter(x, y)
-plt.xlabel('hours')
-plt.ylabel('scores')
+plt.scatter(x, y, color='black')
+plt.xlabel('Hours')
+plt.ylabel('Scores')
 plt.show()
 
 x = dataset.iloc[:, :-1].values
@@ -22,7 +22,7 @@ y = dataset.iloc[:, 1].values
 xTrain, xTest, yTrain, yTest = train_test_split(x, y, test_size=0.2, random_state=0)
 
 regression = LinearRegression()
-regression.fit(X=xTrain.reshape(-1,1),  y=yTrain)
+regression.fit(X=xTrain.reshape(-1, 1),  y=yTrain)
 tested = regression.predict(X=xTest)
 
 
