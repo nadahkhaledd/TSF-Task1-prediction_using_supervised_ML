@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+from sklearn import metrics
 
 
 dataset = pd.read_csv('data.csv')
@@ -14,7 +15,7 @@ plt.title('Raw Data')
 plt.scatter(x, y, color='black')
 plt.xlabel('Hours')
 plt.ylabel('Scores')
-plt.show()
+#plt.show()
 
 
 x = dataset.iloc[:, :-1].values
@@ -31,12 +32,22 @@ plt.scatter(x, y, color='black')
 plt.xlabel('Hours')
 plt.ylabel('Scores')
 plt.plot(x, line, color='red')
-plt.show()
-
+#plt.show()
 
 predicted = regression.predict(X=xTest)
 
-print(predicted)
+MSE = metrics.mean_squared_error(yTest, predicted)
+
+print('mean square error: {}'.format(MSE))
+
+
+newData = 9.25
+newTest = np.array([newData])
+newTest = newTest.reshape(-1, 1)
+newPredicted = regression.predict(X=newTest)
+print('predicted score for {} hours is: {}'.format(newData, newPredicted[0]))
+
+
 
 
 
