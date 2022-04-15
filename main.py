@@ -15,7 +15,7 @@ plt.title('Raw Data')
 plt.scatter(x, y, color='black')
 plt.xlabel('Hours')
 plt.ylabel('Scores')
-#plt.show()
+plt.show()
 
 
 x = dataset.iloc[:, :-1].values
@@ -32,7 +32,7 @@ plt.scatter(x, y, color='black')
 plt.xlabel('Hours')
 plt.ylabel('Scores')
 plt.plot(x, line, color='red')
-#plt.show()
+plt.show()
 
 predicted = regression.predict(X=xTest)
 
