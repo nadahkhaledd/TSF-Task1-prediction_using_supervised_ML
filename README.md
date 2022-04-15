@@ -5,6 +5,8 @@
 
 ## \#GRIPApril2022
 
+[Task Video](https://youtu.be/iH6n1tIH5o4)
+
 #### Task: use linear regression to predict student's score depending on how many hours did they study
 
 > Sample of data
@@ -19,5 +21,3 @@ Hours    Scores
 9.2       88
 
 ```
-
-[Task Video](https://youtu.be/iH6n1tIH5o4)
